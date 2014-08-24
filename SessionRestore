@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+
+var flatiron = require("flatiron");
+var app = flatiron.app;
+var marked = require("marked");
+var TerminalRenderer = require("marked-terminal");
+var browserTabs = require("browser-tabs");
+
+marked.setOptions({
+  fgm: true,
+  renderer: new TerminalRenderer()
+});
+
+app.use(flatiron.plugins.cli,{});
+
+function markdisp (data) {
+  console.log(marked.parse(data));
+}
+
+app.cmd("help", function(){
+  var fs = require("fs");
+  fs.readFile("help.md", 'utf8', function (err, data) {
+    if (err) return app.log.error(err);
+    markdisp(data);
+  });
+});
+
+app.cmd("save *", function(args){
+  console.log(browserTabs);
+  console.log(browserTabs.chrome());
+  
+  var AppSession = require("./src/app-session.js");
+  session = AppSession.create();
+  AppSession.add(session, "Chrome", {});
+})
+
+
+app.start();

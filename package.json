@@ -1,0 +1,22 @@
+{
+  "name": "SessionRestore",
+  "version": "0.1.0",
+  "description": "Saves open applications in a session and restores them at will",
+  "main": "SessionRestore",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Session",
+    "Workflow"
+  ],
+  "author": "Maximilian Klein",
+  "license": "MIT",
+  "dependencies": {
+    "browser-tabs": "0.0.2",
+    "flatiron": "^0.3.11",
+    "marked": "^0.3.2",
+    "marked-terminal": "^1.1.1",
+    "moar": "0.0.9"
+  }
+}
